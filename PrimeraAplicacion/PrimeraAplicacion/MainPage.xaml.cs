@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimeraAplicacion.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,11 @@ namespace PrimeraAplicacion
 		public MainPage()
 		{
 			InitializeComponent();
+
+            MessagingCenter.Subscribe<MainPageViewModel>(this, "AddSurvey", async (a) =>
+            {
+                await Navigation.PushModalAsync(new SurverDetailsView());
+            });
 		}
 	}
 }

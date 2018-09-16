@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:PrimeraAplicacion.ViewModels; assembly=PrimeraAplicacion"
+             x:Class="PrimeraAplicacion.SurverDetailsView">
+
+    <ContentPage.BindingContext>
+        <viewModel:SurveyDetailViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nombre completo"/>
+            <Entry Text="{Binding Name, Mode=TwoWay}"/>
+
+            <Label Text="Comida favorit"/>
+            <Entry Text="{Binding FavoriteFood, Mode=TwoWay}"/>
+
+            <Button Text="Ok"
+                    Command="{Binding SaveCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
